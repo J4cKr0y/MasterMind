@@ -24,9 +24,11 @@ const getMarbleClass = (color: Color | null): string => {
 const Game = () => {
   const [board, setBoard] = useState<Board>(Array(10).fill(null).map(() => Array(4).fill(null)));
   const [secretCode, setSecretCode] = useState<Color[]>([]);
+const [feedback, setFeedback] = useState<Feedback[]>(
+  Array(10).fill(null).map(() => Array(4).fill(null))
+);
   const [currentRow, setCurrentRow] = useState(0);
-  const [selectedColor, setSelectedColor] = useState<Color | null>(null);
-  const [feedback, setFeedback] = useState<Feedback[]>(Array(10).fill(Array(4).fill(null)));
+  const [selectedColor, setSelectedColor] = useState<Color | null>(null);  
   const [gameOver, setGameOver] = useState(false);
   const [hasWon, setHasWon] = useState(false);
 
@@ -47,7 +49,8 @@ const Game = () => {
     for (let i = 0; i < 4; i++) {
       if (guessCopy[i] === codeCopy[i]) {
         blacks++;
-        guessCopy[i] = codeCopy[i] = null as any;
+        guessCopy[i] = codeCopy[i] = null;
+
       }
     }
     
