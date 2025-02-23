@@ -50,7 +50,6 @@ const [feedback, setFeedback] = useState<Feedback[]>(
       if (guessCopy[i] === codeCopy[i]) {
         blacks++;
         guessCopy[i] = codeCopy[i] = null;
-
       }
     }
     
@@ -59,7 +58,7 @@ const [feedback, setFeedback] = useState<Feedback[]>(
         const index = codeCopy.indexOf(guessCopy[i]);
         if (index !== -1) {
           whites++;
-          codeCopy[index] = null as any;
+          guessCopy[i] = codeCopy[i] = null;
         }
       }
     }
