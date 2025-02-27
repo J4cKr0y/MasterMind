@@ -1,19 +1,18 @@
-//scr/app/page.tsx
-import Background from './components/Background';
+// src/app/page.tsx
+import { Suspense } from 'react';
+import { generateSecretCode } from '../lib/gameLogic';
+import GameBoard from '../components/GameBoard';
+import Loading from '../components/Loading';
 
-export const metadata = {
-  title: 'MasterMind Game',
-  description: 'MasterMind avec Next.js, TypeScript, et Tailwind CSS',
-};
-
-const Home: React.FC = () => {
+export default function Home() {
+  const secretCode = generateSecretCode();
+  
   return (
-    <div>
-      <main>
-        <Background />
-      </main>
+    <div className="flex flex-col justify-center items-center min-h-screen bg-gray-100">
+      <h1 className="text-4xl font-bold text-gray-700 mb-8">Mastermind</h1>
+      <Suspense fallback={<Loading />}>
+        <GameBoard initialSecretCode={secretCode} />
+      </Suspense>
     </div>
   );
-};
-
-export default Home;
+}
