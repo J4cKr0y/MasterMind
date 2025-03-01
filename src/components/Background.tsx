@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Marbles from './Marbles';
 
-type Color = 'red' | 'purple' | 'blue' | 'green' | 'yellow';
+type Color = 'red' | 'purple' | 'blue' | 'green' | 'yellow' | null;
 type Row = (Color | null)[];
 type Board = Row[];
 type Feedback = ('black' | 'white' | null)[];
@@ -11,7 +11,8 @@ const getMarbleClass = (color: Color | null): string => {
   if (!color) return "w-8 h-8 rounded-full bg-white border-2 border-gray-300";
   
   const baseClasses = "relative w-8 h-8 mt-10 rounded-full shadow-inner-marble shadow-outer-marble";
-  const colorClasses: Record<Color, string> = {
+  type NonNullColor = Exclude<Color, null>;
+  const colorClasses: Record<NonNullColor, string> = {
     red: "bg-red-marble",
     purple: "bg-purple-marble",
     blue: "bg-blue-marble",
@@ -47,7 +48,7 @@ const Game = () => {
     for (let i = 0; i < 4; i++) {
       if (guessCopy[i] === codeCopy[i]) {
         blacks++;
-        guessCopy[i] = codeCopy[i] = null as any;
+        guessCopy[i] = codeCopy[i] = null;
       }
     }
     
@@ -56,7 +57,7 @@ const Game = () => {
         const index = codeCopy.indexOf(guessCopy[i]);
         if (index !== -1) {
           whites++;
-          codeCopy[index] = null as any;
+          codeCopy[index] = null;
         }
       }
     }
