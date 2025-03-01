@@ -1,5 +1,5 @@
 // src/lib/gameLogic.tsx
-import { Color } from '../types/game';
+import { Color, CodePeg } from '../types/game';
 
 export const generateSecretCode = (): Color[] => {
   const colors: Color[] = ['red', 'purple', 'blue', 'green', 'yellow'];
@@ -9,15 +9,15 @@ export const generateSecretCode = (): Color[] => {
 };
 
 export const checkGuess = (guess: Color[], secretCode: Color[]) => {
-  const codeCopy = [...secretCode];
-  const guessCopy = [...guess];
+  const codeCopy = [...secretCode] as CodePeg[];
+  const guessCopy = [...guess] as CodePeg[];
   let blacks = 0;
   let whites = 0;
   
   for (let i = 0; i < 4; i++) {
     if (guessCopy[i] === codeCopy[i]) {
       blacks++;
-      guessCopy[i] = codeCopy[i] = null as any;
+      guessCopy[i] = codeCopy[i] = null;
     }
   }
   
@@ -26,7 +26,7 @@ export const checkGuess = (guess: Color[], secretCode: Color[]) => {
       const index = codeCopy.indexOf(guessCopy[i]);
       if (index !== -1) {
         whites++;
-        codeCopy[index] = null as any;
+        codeCopy[index] = null;
       }
     }
   }

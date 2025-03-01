@@ -3,13 +3,12 @@
 import { useState } from 'react';
 import { Color, Board, Feedback } from '../types/game';
 import { checkGuess } from '../lib/gameLogic';
-import Marbles from './Marbles';
 import { PegSlot } from './PegSlot';
 import { FeedbackRow } from './FeedbackRow';
 import { GameControls } from './GameControls';
 
 interface GameBoardProps {
-  initialSecretCode: Color[];
+  readonly initialSecretCode: Color[];
 }
 
 export default function GameBoard({ initialSecretCode }: GameBoardProps) {
