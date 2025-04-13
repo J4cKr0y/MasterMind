@@ -33,14 +33,23 @@ Le Mastermind est un jeu de déduction dans lequel un joueur doit deviner une co
 ## Architecture du Projet
 ------------------------
 MasterMind/
+
 ├── app/ # Structure App Router de Next.js
+
 │ ├── layout.tsx # Layout principal
+
 │ ├── page.tsx # Page d'accueil
+
 │ └── game/ # Fonctionnalités du jeu
+
 ├── components/ # Composants réutilisables
+
 ├── lib/ # Utilitaires et logique métier
+
 ├── public/ # Assets statiques
+
 └── styles/ # Fichiers de style
+
 
 J'ai adopté une architecture modulaire qui favorise la réutilisation des composants et la séparation des préoccupations.
 
