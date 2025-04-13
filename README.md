@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mastermind
 
-## Getting Started
+## Projet
+------
+Créez une version du jeu Mastermind avec Next.js TypeScript et Tailwind. 
 
-First, run the development server:
+
+## C'est quoi ?
+------------
+Le Mastermind est un jeu de déduction dans lequel un joueur doit deviner une combinaison secrète de pions codée en couleurs. À chaque tentative, des indices sont donnés pour indiquer si les pions sont corrects en couleur et en position. C'est un jeu stratégique et logique où l'objectif est de découvrir la solution en un nombre limité d'essais. 
+
+
+## Technologies Utilisées
+-----------------------
+- **Frontend**: Next.js 14, TypeScript
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel
+![Next.js](https://img.shields.io/badge/Next.js-v14-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-4.x-blue)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v3-green)
+![Vercel](https://img.shields.io/badge/Deployment-Vercel-black)
+
+
+## Fonctionnalités Clés
+---------------------
+- **Rendu Côté Serveur (SSR)**: Implémentation optimisée pour de meilleures performances et un meilleur référencement
+- **Interface Réactive**: Expérience utilisateur fluide sur tous les appareils
+- **Logique de Jeu Avancée**: Algorithme sophistiqué pour générer et vérifier les combinaisons
+- **Gestion d'État Optimisée**: Utilisation efficace des hooks React et/ou d'une solution de gestion d'état
+
+
+## Architecture du Projet
+------------------------
+MasterMind/
+├── app/ # Structure App Router de Next.js
+│ ├── layout.tsx # Layout principal
+│ ├── page.tsx # Page d'accueil
+│ └── game/ # Fonctionnalités du jeu
+├── components/ # Composants réutilisables
+├── lib/ # Utilitaires et logique métier
+├── public/ # Assets statiques
+└── styles/ # Fichiers de style
+
+J'ai adopté une architecture modulaire qui favorise la réutilisation des composants et la séparation des préoccupations.
+
+
+## Par quoi commencer ? 
+--------------------
+Si vous voulez juste jouer au jeu et voir le résultat, rendez-vous ici : 
+https://mastermind-bay-three.vercel.app
+
+
+Sinon, téléchargez le projet, installez les dépendances : 
+
+```bash
+npm install
+```
+
+puis lancez le serveur : 
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Et ouvrez :  [http://localhost:3000](http://localhost:3000) avec votre navigateur. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Roadmap et Améliorations Prévues
+----------------------------------
+- [ ] Mode multijoueur en temps réel
+- [ ] Sauvegarde des scores et tableau de classement
+- [ ] Thèmes personnalisables
+- [ ] Version mobile native avec React Native
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Les contributions sont bienvenues! N'hésitez pas à ouvrir une issue ou soumettre une pull request.
