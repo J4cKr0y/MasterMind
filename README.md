@@ -15,6 +15,7 @@ Le Mastermind est un jeu de déduction dans lequel un joueur doit deviner une co
 - **Frontend**: Next.js 14, TypeScript
 - **Styling**: Tailwind CSS
 - **Deployment**: Vercel
+
 ![Next.js](https://img.shields.io/badge/Next.js-v14-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-4.x-blue)
 ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v3-green)
